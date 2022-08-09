@@ -27,20 +27,20 @@ DEVICE_FULL_NAME = Motorola One
 KERNEL_DEFCONFIG = deen_defconfig
 
 # Whether to include DTBs with the image. Use 0 (no) or 1.
-KERNEL_IMAGE_WITH_DTB = 1
+KERNEL_IMAGE_WITH_DTB = 0
 
 # Path to the DTB
 # If you leave this undefined, an attempt to find it automatically
 # will be made.
-#KERNEL_IMAGE_DTB = arch/arm64/boot/dts/qcom/my_dtb.dtb
+# KERNEL_IMAGE_DTB = arch/arm64/boot/dts/qcom/my_dtb.dtb
 
 # Whether to include a DTB Overlay. Use 0 (no) or 1.
-KERNEL_IMAGE_WITH_DTB_OVERLAY = 1
+KERNEL_IMAGE_WITH_DTB_OVERLAY = 0
 
 # Path to the DTB overlay.
 # If you leave this undefined, an attempt to find it automatically
 # will be made.
-#KERNEL_IMAGE_DTB_OVERLAY = arch/arm64/boot/dts/qcom/my_overlay.dtbo
+# KERNEL_IMAGE_DTB_OVERLAY = arch/arm64/boot/dts/qcom/my_overlay.dtbo
 
 # Whether to include the DTB Overlay into the kernel image
 # Use 0 (no, default) or 1.
@@ -49,7 +49,7 @@ KERNEL_IMAGE_WITH_DTB_OVERLAY_IN_KERNEL = 0
 
 # Path to a specifc configuration file for mkdtboimg.
 # The default is to leave it undefined.
-#KERNEL_IMAGE_DTB_OVERLAY_CONFIGURATION = debian/custom_dtbo_config.cfg
+# KERNEL_IMAGE_DTB_OVERLAY_CONFIGURATION = debian/custom_dtbo_config.cfg
 
 # Path to the DTB directory. Only define if KERNEL_IMAGE_DTB_OVERLAY_CONFIGURATION
 # is defined too.
@@ -64,7 +64,7 @@ KERNEL_BOOTIMAGE_SECONDIMAGE_OFFSET = 0x80f00000
 KERNEL_BOOTIMAGE_TAGS_OFFSET = 0x80000100
 
 # Required for header version 2, ignore otherwise
-KERNEL_BOOTIMAGE_DTB_OFFSET = 0x1f00000
+# KERNEL_BOOTIMAGE_DTB_OFFSET = 0x1f00000
 
 # Kernel bootimage version. Defaults to 0 (legacy header).
 # As a rule of thumb:
@@ -72,7 +72,7 @@ KERNEL_BOOTIMAGE_DTB_OFFSET = 0x1f00000
 # Devices launched with Android 9: version 1
 # Devices launched with Android 10: version 2
 # Devices launched with Android 11: version 2 or 3 (GKI)
-KERNEL_BOOTIMAGE_VERSION = 2
+KERNEL_BOOTIMAGE_VERSION = 1
 
 ########################################################################
 # Android verified boot
@@ -143,7 +143,7 @@ BUILD_TRIPLET = aarch64-linux-android-
 BUILD_CLANG_TRIPLET = aarch64-linux-gnu-
 
 # The compiler to use. Recent Android kernels are built with clang.
-BUILD_CC = clang
+BUILD_CC = aarch64-linux-android-gcc
 
 # Extra paths to prepend to the PATH variable. You'll probably want
 # to specify the clang path here (the default).
